@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:quiz_app_test/model/model_quiz.dart';
 import 'package:quiz_app_test/screen/screen_quiz.dart';
 
-class HomeScreen extends StatefulWidget{
+class HomeScreen extends StatefulWidget {
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -29,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     Size screenSize = MediaQuery.of(context).size;
     double width = screenSize.width;
     double height = screenSize.height;
@@ -46,10 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Center(
-              child: Image.asset(
-                'images/quiz.jpeg',
-                 width: width*0.8
-              ),
+              child: Image.asset('images/quiz.jpeg', width: width * 0.8),
             ),
             Padding(
               padding: EdgeInsets.all(width * 0.024),
@@ -57,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(
               '플러터 퀴즈 앱',
               style: TextStyle(
-                fontSize: width*0.065, 
+                fontSize: width * 0.065,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -75,7 +72,7 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.only(bottom: width * 0.036),
               child: Center(
                 child: ButtonTheme(
-                  minWidth: width*0.8,
+                  minWidth: width * 0.8,
                   height: height * 0.05,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
@@ -88,12 +85,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     color: Colors.deepPurple,
                     onPressed: () {
                       Navigator.push(
-                        context,                      MaterialPageRoute(
-                          builder: (context) => QuizScreen(
-                            quizs: quizs,
-                          )
-                        )
-                      );
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => QuizScreen(
+                                    quizs: quizs,
+                                  )));
                     },
                   ),
                 ),
@@ -105,27 +101,26 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  Widget _buildStep(double width, String title){
+  Widget _buildStep(double width, String title) {
     return Container(
-      padding: EdgeInsets.fromLTRB(
-        width * 0.048,
-        width * 0.024,
-        width * 0.048,
-        width * 0.024,
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Icon(
-            Icons.check_box,
-            size: width * 0.04,
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: width * 0.024),
-          ),
-          Text(title),
-        ],
-      )
-    );
+        padding: EdgeInsets.fromLTRB(
+          width * 0.048,
+          width * 0.024,
+          width * 0.048,
+          width * 0.024,
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Icon(
+              Icons.check_box,
+              size: width * 0.04,
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: width * 0.024),
+            ),
+            Text(title),
+          ],
+        ));
   }
 }
